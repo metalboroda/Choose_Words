@@ -57,17 +57,13 @@ MonoBehaviour:
     - 4b3c7b83702e2a644a980b4243817cca
     - 65cce828aedddd143bba5707ee83f3a3
     - 1223f610050cd1e43b1794c814e38cd6
-    - 41ea076a546e3204a83ed91773713013
+    - e66709bc03537c5439ad04a21eb2b9bf
     - 9f2ecf9148e50f441945b0215ccece11
     - 330d9eaa5106dff44a3786f658030877
     - cd1b30214bf1a9f42b2fecd1b351b191
     - 44dc49d0830c76740818de108e6799f4
     - 952f0cdbac2a5db47acdb51cd1b6d7e8
     - cbc0f8fc80c3f184fb81c540c8343b73
-    - 5904d5bb58814634e8645949a6a773a0
-    - 601e26cac70885d42bf8610075af02c2
-    - a907eb466e275b74395c04116c3a945d
-    - 94dba58c51295b54186587248e53fa90
     - 4582042f3fa1fec44afa79523e99ea33
     - 9066946ca82c3484188ad58dd3ad8efb
     - 08b0c6c944574d34493d5675972d8b8f
@@ -124,7 +120,7 @@ MonoBehaviour:
     - guid: 811ced4baf03cf041be17547abad5450
       iColor: 0
       autoIcon: 
-      customIcon: 
+      customIcon: RawImage Icon
       autoIconDirty: 0
     - guid: 444563dd6d3fcef42aa6d9589c2545df
       iColor: 0
@@ -229,7 +225,7 @@ MonoBehaviour:
     - guid: 18941b3379f3730449e84b57d408fa17
       iColor: 0
       autoIcon: 
-      customIcon: 
+      customIcon: Texture Icon
       autoIconDirty: 0
     - guid: 6aaddaebf36849348b0e38fd780eeea1
       iColor: 0
@@ -301,7 +297,7 @@ MonoBehaviour:
       autoIcon: Material Icon
       customIcon: none
       autoIconDirty: 0
-    - guid: 41ea076a546e3204a83ed91773713013
+    - guid: e66709bc03537c5439ad04a21eb2b9bf
       iColor: 0
       autoIcon: 
       customIcon: 
@@ -330,31 +326,11 @@ MonoBehaviour:
       iColor: 0
       autoIcon: 
       customIcon: 
-      autoIconDirty: 1
+      autoIconDirty: 0
     - guid: cbc0f8fc80c3f184fb81c540c8343b73
       iColor: 0
       autoIcon: Material Icon
       customIcon: none
-      autoIconDirty: 0
-    - guid: 5904d5bb58814634e8645949a6a773a0
-      iColor: 0
-      autoIcon: 
-      customIcon: 
-      autoIconDirty: 0
-    - guid: 601e26cac70885d42bf8610075af02c2
-      iColor: 0
-      autoIcon: 
-      customIcon: 
-      autoIconDirty: 0
-    - guid: a907eb466e275b74395c04116c3a945d
-      iColor: 0
-      autoIcon: 
-      customIcon: 
-      autoIconDirty: 0
-    - guid: 94dba58c51295b54186587248e53fa90
-      iColor: 0
-      autoIcon: 
-      customIcon: 
       autoIconDirty: 0
     - guid: 4582042f3fa1fec44afa79523e99ea33
       iColor: 0

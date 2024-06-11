@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: CorrectValuesContainer_1
   m_EditorClassIdentifier: 
   _correctValues:
-  - 1
-  - 2
+  - dandelion

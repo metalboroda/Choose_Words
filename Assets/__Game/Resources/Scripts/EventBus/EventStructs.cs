@@ -1,4 +1,5 @@
 using Assets.__Game.Scripts.Enums;
+using UnityEngine;
 
 namespace __Game.Resources.Scripts.EventBus
 {
@@ -20,6 +21,14 @@ namespace __Game.Resources.Scripts.EventBus
 
     #region Variants&Answers
     public struct VariantsAssignedEvent : IEvent { }
+    public struct VariantClickedEvent : IEvent
+    {
+      public string VariantValue;
+    }
+    public struct VariantAudioClickedEvent : IEvent
+    {
+      public AudioClip AudioClip;
+    }
     public struct CorrectAnswerEvent : IEvent { }
     public struct IncorrectCancelEvent : IEvent { }
     public struct QuestTextEvent : IEvent

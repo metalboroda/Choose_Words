@@ -1,5 +1,4 @@
 using __Game.Resources.Scripts.EventBus;
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,8 +14,6 @@ namespace Assets.__Game.Resources.Scripts._GameStuff
     [SerializeField] private AudioClip _wordAudioClip;
 
     public bool IsClicked { get; private set; }
-
-    private bool _canPlayAudio = true;
 
     private Image _image;
     private Button _button;
@@ -41,32 +38,15 @@ namespace Assets.__Game.Resources.Scripts._GameStuff
 
     private void OnButtonClick()
     {
-      if (IsClicked == false)
-        PlayWordAudioCLip();
-
       IsClicked = !IsClicked;
       _image.sprite = IsClicked ? _selectedSprite : _defaultSprite;
     }
 
-    public string GetWordText()
-    {
-      return _textMeshPro.text;
-    }
+    public string GetWordText() => _textMeshPro.text;
 
-    private void PlayWordAudioCLip()
+    public void PlayWordAudioCLip()
     {
-      if (_canPlayAudio == false) return;
-
       EventBus<EventStructs.VariantAudioClickedEvent>.Raise(new EventStructs.VariantAudioClickedEvent { AudioClip = _wordAudioClip });
-
-      StartCoroutine(DoResetPosibilityToPlayWordAudioCLip());
-    }
-
-    private IEnumerator DoResetPosibilityToPlayWordAudioCLip()
-    {
-      yield return new WaitForSeconds(3);
-
-      _canPlayAudio = true;
     }
   }
 }

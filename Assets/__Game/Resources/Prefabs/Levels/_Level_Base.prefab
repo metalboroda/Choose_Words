@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3936b7bd3b3cc904b88e2223262bad0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _questStartClip: {fileID: 8300000, guid: 59299c651561ce044969836dcc1afb90, type: 3}
+  _questStartClip: {fileID: 0}
   _questClips: []
   _delayBetweenClips: 0
   _winAnnouncerClips:

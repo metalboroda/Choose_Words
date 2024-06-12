@@ -40,6 +40,8 @@ namespace Assets.__Game.Resources.Scripts._GameStuff
     {
       IsClicked = !IsClicked;
       _image.sprite = IsClicked ? _selectedSprite : _defaultSprite;
+
+      EventBus<EventStructs.UiButtonEvent>.Raise(new EventStructs.UiButtonEvent());
     }
 
     public string GetWordText() => _textMeshPro.text;

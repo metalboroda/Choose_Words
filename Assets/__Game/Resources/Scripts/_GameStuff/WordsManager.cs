@@ -14,11 +14,18 @@ public class WordsManager : MonoBehaviour
   [SerializeField] private GameObject[] _subLevels;
   [Header("")]
   [SerializeField] private Button _submitButton;
+  [Header("Effects")]
+  [SerializeField] private ParticleSystem _winParticles;
+  [SerializeField] private AudioSource _winAudioSource;
+  [SerializeField] private ParticleSystem _loseParticles;
+  [SerializeField] private AudioSource _loseAudioSource;
 
   private List<WordButton> _wordButtons = new List<WordButton>();
   private HashSet<string> _correctValuesSet;
   private bool _canSubmit = true;
   private int _currentSubLevelIndex = 0;
+
+  private Canvas _canvas;
 
   private GameBootstrapper _gameBootstrapper;
 
@@ -26,13 +33,21 @@ public class WordsManager : MonoBehaviour
   {
     _gameBootstrapper = GameBootstrapper.Instance;
 
+    _canvas = GetComponent<Canvas>();
+
     _wordButtons.AddRange(GetComponentsInChildren<WordButton>());
+  }
+
+  private void OnEnable()
+  {
     _submitButton.onClick.AddListener(OnSubmitButtonClick);
   }
 
   private void Start()
   {
     _correctValuesSet = new HashSet<string>(_correctValuesContainerSo.CorrectValues);
+
+    _canvas.worldCamera = Camera.main;
 
     EventBus<EventStructs.VariantsAssignedEvent>.Raise(new EventStructs.VariantsAssignedEvent());
 
@@ -74,11 +89,19 @@ public class WordsManager : MonoBehaviour
 
     if (hasIncorrectSelection || selectedWords.Count != _correctValuesSet.Count)
     {
-      _gameBootstrapper.StateMachine.ChangeState(new GameLoseState(_gameBootstrapper));
+      _loseParticles.Play();
+      _loseAudioSource.Play();
+
+      _gameBootstrapper.StateMachine.ChangeStateWithDelay(new GameLoseState(_gameBootstrapper), 0.5f, this);
     }
     else
     {
       _currentSubLevelIndex++;
+
+      PlayWinningAudioClip();
+
+      _winParticles.Play();
+      _winAudioSource.Play();
 
       if (_currentSubLevelIndex < _subLevels.Length)
       {
@@ -86,11 +109,11 @@ public class WordsManager : MonoBehaviour
       }
       else
       {
-        PlayWinningAudioClip();
-
-        _gameBootstrapper.StateMachine.ChangeStateWithDelay(new GameWinState(_gameBootstrapper), 1.5f, this);
+        _gameBootstrapper.StateMachine.ChangeStateWithDelay(new GameWinState(_gameBootstrapper), 1f, this);
       }
     }
+
+    EventBus<EventStructs.UiButtonEvent>.Raise(new EventStructs.UiButtonEvent());
   }
 
   private void ActivateSubLevel(int index)

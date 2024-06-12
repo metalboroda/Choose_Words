@@ -182,7 +182,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "\u041E\u0431\u0435\u0440\u0438 \u0434\u0432\u0430 \u043E\u0434\u043D\u0430\u043A\u043E\u0432\u0438\u0445
+    \u0441\u043B\u043E\u0432\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 88bbc78a9d4eb144db95ca1121858711, type: 2}
   m_sharedMaterial: {fileID: 1802962409221402600, guid: 88bbc78a9d4eb144db95ca1121858711, type: 2}
@@ -191,8 +192,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294959279
-  m_fontColor: {r: 0.6862745, g: 0.8781156, b: 1, a: 1}
+    rgba: 4294933760
+  m_fontColor: {r: 0, g: 0.49019608, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -209,7 +210,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 79.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2087,8 +2088,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicMixer: {fileID: 24100000, guid: 618f0dc0539fcf947aaa814bc718890b, type: 2}
   _soundtrackClips:
-  - {fileID: 8300000, guid: bb8c389293a6a72499005c9cae14703a, type: 3}
-  - {fileID: 8300000, guid: 94a5d5a3760226848a5e0eb1e14ca256, type: 3}
+  - {fileID: 8300000, guid: aa94e69061fb2b44f82553263008007d, type: 3}
+  - {fileID: 8300000, guid: 8f87bd07597ea904c9138e3432625fd9, type: 3}
 --- !u!82 &1668459660
 AudioSource:
   m_ObjectHideFlags: 0

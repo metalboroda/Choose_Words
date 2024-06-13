@@ -122,7 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f9726d58c9281e47a59f8743819b556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _correctValuesContainerSo: {fileID: 11400000, guid: 217846e4a1f878c439a55c7b1d7bf5f5, type: 2}
   _subLevels:
   - {fileID: 1067507125789895249}
   _submitButton: {fileID: 3575947731986877536}
@@ -140,6 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1067507125789895254}
   - component: {fileID: 1067507125789895255}
+  - component: {fileID: 4243510593014610716}
   m_Layer: 5
   m_Name: SubLevel_1
   m_TagString: Untagged
@@ -193,6 +193,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &4243510593014610716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067507125789895249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2604ae60f9fcc8d4c8df500286f0f791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _correctValuesContainerSo: {fileID: 0}
 --- !u!1 &1233402103973091020
 GameObject:
   m_ObjectHideFlags: 0

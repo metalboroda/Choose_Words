@@ -231,7 +231,7 @@ MonoBehaviour:
     - guid: 4db97d2b86892ee4787cf76dbe51cafc
       iColor: 0
       autoIcon: 
-      customIcon: 
+      customIcon: ScriptableObject Icon
       autoIconDirty: 0
     - guid: 18941b3379f3730449e84b57d408fa17
       iColor: 0

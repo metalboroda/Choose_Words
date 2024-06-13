@@ -9,9 +9,8 @@ using UnityEngine.UI;
 
 public class WordsManager : MonoBehaviour
 {
-  [SerializeField] private CorrectValuesContainerSo _correctValuesContainerSo;
   [Header("")]
-  [SerializeField] private GameObject[] _subLevels;
+  [SerializeField] private SubLevel[] _subLevels;
   [Header("")]
   [SerializeField] private Button _submitButton;
   [Header("Effects")]
@@ -20,6 +19,7 @@ public class WordsManager : MonoBehaviour
   [SerializeField] private ParticleSystem _loseParticles;
   [SerializeField] private AudioSource _loseAudioSource;
 
+  private CorrectValuesContainerSo _currentCorrectValuesContainerSo;
   private List<WordButton> _wordButtons = new List<WordButton>();
   private HashSet<string> _correctValuesSet;
   private bool _canSubmit = true;
@@ -45,8 +45,6 @@ public class WordsManager : MonoBehaviour
 
   private void Start()
   {
-    _correctValuesSet = new HashSet<string>(_correctValuesContainerSo.CorrectValues);
-
     _canvas.worldCamera = Camera.main;
 
     EventBus<EventStructs.VariantsAssignedEvent>.Raise(new EventStructs.VariantsAssignedEvent());
@@ -104,13 +102,9 @@ public class WordsManager : MonoBehaviour
       _winAudioSource.Play();
 
       if (_currentSubLevelIndex < _subLevels.Length)
-      {
         ActivateSubLevel(_currentSubLevelIndex);
-      }
       else
-      {
         _gameBootstrapper.StateMachine.ChangeStateWithDelay(new GameWinState(_gameBootstrapper), 1f, this);
-      }
     }
 
     EventBus<EventStructs.UiButtonEvent>.Raise(new EventStructs.UiButtonEvent());
@@ -120,11 +114,14 @@ public class WordsManager : MonoBehaviour
   {
     for (int i = 0; i < _subLevels.Length; i++)
     {
-      _subLevels[i].SetActive(i == index);
+      _subLevels[i].gameObject.SetActive(i == index);
     }
 
     _wordButtons.Clear();
     _wordButtons.AddRange(_subLevels[index].GetComponentsInChildren<WordButton>());
+
+    _currentCorrectValuesContainerSo = _subLevels[index].GetCorrectValuesContainerSo();
+    _correctValuesSet = new HashSet<string>(_currentCorrectValuesContainerSo.CorrectValues);
 
     _canSubmit = true;
   }
